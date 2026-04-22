@@ -9,7 +9,7 @@ import java.awt.GridLayout;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -55,7 +55,7 @@ class ProgramTest {
 
         game.generateMoves(new char[] {'X', ' ', 'O', ' ', 'X', 'O', ' ', 'X', ' '}, moves);
 
-        assertEquals(List.of(1, 3, 6, 8), moves);
+        assertEquals(Arrays.asList(1, 3, 6, 8), moves);
     }
 
     @Test
@@ -122,7 +122,7 @@ class ProgramTest {
         String output = captureOutput(() -> {
             Utility.print(new char[] {'X', 'O', ' ', ' ', 'X', ' ', 'O', ' ', 'X'});
             Utility.print(new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9});
-            Utility.print(new ArrayList<>(List.of(0, 4, 8)));
+            Utility.print(new ArrayList<>(Arrays.asList(0, 4, 8)));
         });
 
         assertTrue(output.contains("X-O-"));
